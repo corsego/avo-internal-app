@@ -23,6 +23,17 @@
   </head>
 
   <body>
+    <%= link_to 'Home', root_path %>
+    <%= link_to 'Avo', Avo.configuration.root_path %>
+    <% if authenticated? %>
+      <%= Current.user.email_address %>
+      <%= button_to 'Sign out', session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign in', new_session_path %>
+    <% end %>
+    <%= notice %>
+    <%= alert %>
+    <hr>
     <%= yield %>
   </body>
 </html>
