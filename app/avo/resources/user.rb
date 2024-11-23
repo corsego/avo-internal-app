@@ -8,6 +8,7 @@ class Avo::Resources::User < Avo::BaseResource
   def fields
     field :id, as: :id
     field :email_address, as: :text
+    field :admin, as: :boolean
     field :sessions, as: :has_many
   end
 end
