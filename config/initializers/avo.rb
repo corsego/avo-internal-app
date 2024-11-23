@@ -25,6 +25,10 @@ Avo.configure do |config|
   # config.current_user_method = :current_user
   # config.authenticate_with do
   # end
+  config.current_user_method do
+    Current.user
+  end
+  config.sign_out_path_name = :session_path
 
   ## == Authorization ==
   # config.is_admin_method = :is_admin
